@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 
-export default function Navigation({valueTask, setValueTask}) {
+export default function Navigation({valueTask, setValueTask, darkMode}) {
     return (
         <div className='Navigation'>
             <div className='w-[80%] h-[100px] m-auto flex items-center'>

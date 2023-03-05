@@ -2,7 +2,7 @@ import React from 'react'
 import Header from "./Header"
 import { Link } from "react-router-dom"
 
-export default function Pays({actualObj}) {
+export default function Pays({actualObj, darkMode, setDarkMode}) {
     let currencie;
     let tabLanguages = []
     for (let element in actualObj.currencies) {
@@ -17,12 +17,12 @@ export default function Pays({actualObj}) {
     return (
         <div className='Pays w-screen h-screen overflow-x-hidden'>
             {recupLanguages()}
-            <Header />
-            <div className='w-[100%] h-[88vh] bg-gray-100 mt-5'>
+            <Header setDarkMode={setDarkMode} darkMode={darkMode} />
+            <div className={darkMode ? 'w-[100%] h-[88.3vh] bg-[#1e1c1f] text-white' : 'w-[100%] h-[88vh] bg-gray-100'}>
                 <div className='w-[80%] m-auto pt-7'>
-                    <button className="bg-white rounded-lg shadow-xl px-6 py-3">
-                        <Link to={"/"}>Back</Link>
-                    </button>
+                    <Link to={"/"}><button className={darkMode ? "bg-black text-white rounded-lg shadow-xl px-6 py-3" : "bg-white rounded-lg shadow-xl px-6 py-3"}>
+                        Back
+                    </button></Link>
                 </div>
                 <div className='flex gap-14 h-[60%] w-[80%] m-auto mt-24'>
                     <div className='w-1/2 mt-5'>
@@ -31,7 +31,7 @@ export default function Pays({actualObj}) {
                     <div className='w-1/2 mt-5'>
                         <p className='text-4xl font-semibold'>{actualObj.name.common}</p>
                         <div className=' w-[100%] h-[220px] mt-8 flex'>
-                            <div className='h-[85%] w-1/2  flex flex-col gap-2 text-lg'>
+                            <div className='h-[85%] w-1/2  flex flex-col gap-4 text-lg'>
                                 <p>
                                     <span className='font-semibold'>Native name :</span>&nbsp;{actualObj.name.common}
                                 </p>
@@ -48,7 +48,7 @@ export default function Pays({actualObj}) {
                                     <span className='font-semibold'>Capital :</span>&nbsp;{actualObj.capital}
                                 </p>
                             </div>
-                            <div className='h-[85%] w-1/2'>
+                            <div className='h-[85%] w-1/2 flex flex-col gap-4 text-lg'>
                                 <p>
                                     <span className='font-semibold'>Top Level Domain :</span>&nbsp;{actualObj.tld[0]}
                                 </p>

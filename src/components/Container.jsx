@@ -2,7 +2,7 @@ import React from 'react'
 import Card from "./Card"
 import { useEffect,useState } from 'react'
 
-export default function Main({actualObj, setActualObj, valueTask}) {
+export default function Main({actualObj, setActualObj, valueTask, darkMode}) {
     const [data,setData] = useState([])
     const [sortedData,setSortedData] = useState([])
 
@@ -11,7 +11,6 @@ export default function Main({actualObj, setActualObj, valueTask}) {
         const data = await response.json();
         setData(data);
         setSortedData(data.sort(compare));
-        // console.log(data);
     }
 
     function compare(a, b) {
@@ -42,15 +41,10 @@ export default function Main({actualObj, setActualObj, valueTask}) {
                 sortedData.map((element,index)=>{
                     return      <Card 
                                     key={index} 
-                                    pays={element.name.common} 
-                                    capital={element.capital} 
-                                    region={element.continents} 
-                                    img={element.flags.svg} 
-                                    population={element.population}
+                                    darkMode={darkMode}
                                     setActualObj={setActualObj}
                                     element={element}
                                 />
-                                {/* Des que je rajoute Link Probleme */}
                 })
             }
         </div>
