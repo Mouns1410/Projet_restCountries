@@ -7,7 +7,7 @@ export default function Card({setActualObj, element, darkMode}) {
             className={darkMode ? 'Card w-[23%] h-[400px] shadow-xl rounded-md bg-black text-white' : 'Card w-[23%] h-[400px] shadow-xl rounded-md bg-white'}>
             <Link to={"/country/:pays"}>
                 <div className='h-[45%] w-[100%]'>
-                    <img src={element.flags.svg} className='h-[100%] w-[100%] rounded-t-md' />
+                    <img src={element.flags.svg} alt={element.flags.alt} className='h-[100%] w-[100%] rounded-t-md' />
                 </div>
                 <div className='w-[100%] flex flex-col gap-7 py-5 px-3'>
                     <div>
