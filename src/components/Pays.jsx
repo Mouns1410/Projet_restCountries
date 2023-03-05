@@ -13,7 +13,7 @@ export default function Pays({actualObj, darkMode, setDarkMode}) {
             tabLanguages.push(actualObj.languages[element])
         }
     }
-    console.log(actualObj);
+    // console.log(actualObj);
     return (
         <div className='Pays w-screen h-screen overflow-x-hidden'>
             {recupLanguages()}
@@ -58,8 +58,8 @@ export default function Pays({actualObj, darkMode, setDarkMode}) {
                                 <p>
                                     <span className='font-semibold'>languages :</span>&nbsp;
                                     {
-                                        tabLanguages.map((element) => {
-                                            return <span>{element} &nbsp;</span>
+                                        tabLanguages.map((element,index) => {
+                                            return <span key={index}>{element} &nbsp;</span>
                                         })
                                     }
                                 </p>
