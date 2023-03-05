@@ -21,7 +21,7 @@ export default function Navigation({valueTask, setValueTask, darkMode}) {
                 </div>
                 <div className='w-1/2 flex justify-end'>
                     <div>
-                        <select className='py-3 px-5 shadow-xl'>
+                        <select className='py-3 px-5 shadow-xl focus:outline-none'>
                             <option value="1">All regions</option>
                             <option value="2">Africa</option>
                             <option value="3">America</option>
