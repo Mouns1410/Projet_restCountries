@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Header({setDarkMode, darkMode}) {
     return (
-        <div className={darkMode ? "Header bg-black text-white h-20 w-screen" : "Header bg-white h-24 w-screen"}>
+        <div className={darkMode ? "Header bg-black text-white h-20 w-screen" : "Header bg-white h-20 w-screen"}>
             <div className='w-[80%] h-[100%] m-auto flex items-center'>
                 <div className='w-1/2'>
                     <p className='font-semibold text-3xl'>Where in the world ?</p>

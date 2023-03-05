@@ -18,7 +18,7 @@ export default function Pays({actualObj, darkMode, setDarkMode}) {
         <div className='Pays w-screen h-screen overflow-x-hidden'>
             {recupLanguages()}
             <Header setDarkMode={setDarkMode} darkMode={darkMode} />
-            <div className={darkMode ? 'w-[100%] h-[90.25vh] bg-[#1e1c1f] text-white' : 'w-[100%] h-[88vh] bg-gray-100'}>
+            <div className={darkMode ? 'w-[100%] h-[90.25vh] bg-[#1e1c1f] text-white' : 'w-[100%] h-[90.25vh] bg-gray-100'}>
                 <div className='w-[80%] m-auto pt-7'>
                     <Link to={"/"}><button className={darkMode ? "bg-black text-white rounded-lg shadow-xl px-6 py-3" : "bg-white rounded-lg shadow-xl px-6 py-3"}>
                         Back
