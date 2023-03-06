@@ -2,7 +2,7 @@ import React from 'react'
 import Card from "./Card"
 import { useEffect,useState } from 'react'
 
-export default function Main({actualObj, setActualObj, valueTask, darkMode}) {
+export default function Main({setActualObj, nameCountry, darkMode, regionSelected}) {
     const [data,setData] = useState([])
     const [sortedData,setSortedData] = useState([])
 
@@ -28,12 +28,24 @@ export default function Main({actualObj, setActualObj, valueTask, darkMode}) {
     
     useEffect(() => {
         setSortedData(data)
-        if (valueTask != "") {
-            let test = data
-            test = test.filter(task => task.name.common.toUpperCase().startsWith(valueTask.toUpperCase()));
-            setSortedData(test);         
+        if (nameCountry != "") {
+            let dataFiltredBySearch = data
+            dataFiltredBySearch = dataFiltredBySearch.filter(country => country.name.common.toUpperCase().startsWith(nameCountry.toUpperCase()));
+            setSortedData(dataFiltredBySearch);         
         }
-    }, [valueTask]);
+    }, [nameCountry]);
+
+    useEffect(()=> {
+        setSortedData(data)
+        let dataFiltredByRegion = data
+        if (regionSelected == "All regions") {
+            setSortedData(data)
+            console.log("Toute les regions")
+        } else if (regionSelected != "All regions") {
+            dataFiltredByRegion = dataFiltredByRegion.filter(country => country.region.includes(regionSelected));
+            setSortedData(dataFiltredByRegion); 
+        }
+    }, [regionSelected])
     
     return (
         <div className='Main w-[80%] h-[100px] m-auto mt-10 flex gap-7 justify-center flex-wrap'>
