@@ -2,8 +2,8 @@ import React from 'react'
 import Card from "./Card"
 import { useEffect,useState } from 'react'
 
-export default function Main({setActualObj, nameCountry, darkMode, regionSelected}) {
-    const [data,setData] = useState([])
+export default function Main({setActualObj, nameCountry, darkMode, regionSelected, data, setData}) {
+    // const [data,setData] = useState([])
     const [sortedData,setSortedData] = useState([])
 
     async function fetchDataJSON() {

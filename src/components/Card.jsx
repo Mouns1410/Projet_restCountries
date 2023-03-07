@@ -6,7 +6,7 @@ export default function Card({setActualObj, element, darkMode}) {
     return (
         <div onClick={()=>{setActualObj(element);}}
             className={darkMode ? 'Card w-[23%] h-[400px] shadow-xl rounded-md bg-black text-white hover:animate__animated animate__pulse' : 'Card animate__animated w-[23%] h-[400px] shadow-xl rounded-md bg-white hover:animate__animated animate__pulse'}>
-            <Link to={"/country/:pays"}>
+            <Link to={`/country/${element.name.common}`}>
                 <div className='h-[45%] w-[100%]'>
                     <img src={element.flags.svg} alt={element.flags.alt} className='h-[100%] w-[100%] rounded-t-md' />
                 </div>

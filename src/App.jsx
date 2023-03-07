@@ -10,15 +10,16 @@ import Pays from "./components/Pays"
 export default function App() {
   const [actualObj, setActualObj] = useState(null)
   const [darkMode, setDarkMode] = useState(false)
+  const [data, setData] = useState([])
 
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <Acceuil setDarkMode={setDarkMode} darkMode={darkMode} actualObj={actualObj} setActualObj={setActualObj} />,
+      element: <Acceuil data={data} setData={setData} setDarkMode={setDarkMode} darkMode={darkMode} actualObj={actualObj} setActualObj={setActualObj} />,
     },
     {
       path: "/country/:pays",
-      element: <Pays actualObj={actualObj} setDarkMode={setDarkMode} darkMode={darkMode} />
+      element: <Pays data={data} actualObj={actualObj} setDarkMode={setDarkMode} darkMode={darkMode} />
     }
   ]);
   return (
